@@ -7,15 +7,16 @@
 
 #ifndef ColaVec_hpp
 #define ColaVec_hpp
+#pragma once
 #include <iostream>
 #include <stdio.h>
-#include "ColaVec.hpp"
+
 class ColaVec
 {
 private:
     int limite;
     int tope;
-    int *vCola[];
+    int *vCola;
     
 public:
     
@@ -26,8 +27,9 @@ public:
     bool colaLlena();
 //  void llenarola(ColaVec*); // pasar datos de pila llena a pila vacía
 //  void insertarInicio(int);
-    void invertirCola();
-    void mostraCola();
+//  void invertirCola();
+//  void mostraCola();
+    void ordenarCola(ColaVec);
     
 };
 

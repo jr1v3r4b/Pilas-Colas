@@ -4,7 +4,6 @@
 //
 //  Created by UDP Soporte on 2/02/22.
 //
-
 #include "ColaVec.hpp"
 #include <iostream>
 #include <stdio.h>
@@ -16,7 +15,7 @@ ColaVec::ColaVec(int tam)
 {
     limite = tam -1;
     tope = -1;
-    *vCola[tam];
+    vCola = new int[tam];
 }
 
 
@@ -24,30 +23,59 @@ void ColaVec::encolar(int dato)
 {
     tope++;
     vCola[tope] = dato;
-
 }
 
 int ColaVec::desencolar()
 {
     int r = vCola[0], i = 1;
-    while (i < = tope) {
+    
+    while (i <= tope)
+    {
         vCola[i -1] = vCola[i];
+        i++;
     }
     
-    return 0;
+    return r;
 }
 
 bool ColaVec::colaVacia()
 {
+    bool r = false;
+    if( tope == 0 )
+    {
+        r = true;
+    }
+    return r;
+    
     return 0;
 }
 
 bool ColaVec::colaLlena()
 {
-    return 0;
+    if (tope == limite)
+        return true;
+    else
+        return false;
 }
+
+
+void ordenarCola(ColaVec* a)
+{
+    
+}
+
+
+/*
+void invertirCola()
+{
+    
+}
+
+ 
 
 void mostraCola()
 {
     
+    
 }
+*/

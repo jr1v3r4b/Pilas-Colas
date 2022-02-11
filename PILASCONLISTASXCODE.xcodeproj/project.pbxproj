@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		27F02F3227A6D5A00033BC21 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F02F3127A6D5A00033BC21 /* main.cpp */; };
+		27F02F3C27A6D7060033BC21 /* Nodo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F02F3A27A6D7060033BC21 /* Nodo.cpp */; };
+		27F02F3F27A6D7920033BC21 /* Pila.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F02F3D27A6D7920033BC21 /* Pila.cpp */; };
+		27F02F4227AAF2A20033BC21 /* Colas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F02F4027AAF2A20033BC21 /* Colas.cpp */; };
+		27F02F4527AAF9D40033BC21 /* ColaVec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F02F4327AAF9D40033BC21 /* ColaVec.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +29,14 @@
 /* Begin PBXFileReference section */
 		27F02F2E27A6D5A00033BC21 /* PILASCONLISTASXCODE */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PILASCONLISTASXCODE; sourceTree = BUILT_PRODUCTS_DIR; };
 		27F02F3127A6D5A00033BC21 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		27F02F3A27A6D7060033BC21 /* Nodo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Nodo.cpp; sourceTree = "<group>"; };
+		27F02F3B27A6D7060033BC21 /* Nodo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Nodo.hpp; sourceTree = "<group>"; };
+		27F02F3D27A6D7920033BC21 /* Pila.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pila.cpp; sourceTree = "<group>"; };
+		27F02F3E27A6D7920033BC21 /* Pila.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pila.hpp; sourceTree = "<group>"; };
+		27F02F4027AAF2A20033BC21 /* Colas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Colas.cpp; sourceTree = "<group>"; };
+		27F02F4127AAF2A20033BC21 /* Colas.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Colas.hpp; sourceTree = "<group>"; };
+		27F02F4327AAF9D40033BC21 /* ColaVec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ColaVec.cpp; sourceTree = "<group>"; };
+		27F02F4427AAF9D40033BC21 /* ColaVec.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ColaVec.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				27F02F3127A6D5A00033BC21 /* main.cpp */,
+				27F02F3E27A6D7920033BC21 /* Pila.hpp */,
+				27F02F3D27A6D7920033BC21 /* Pila.cpp */,
+				27F02F4127AAF2A20033BC21 /* Colas.hpp */,
+				27F02F4027AAF2A20033BC21 /* Colas.cpp */,
+				27F02F4427AAF9D40033BC21 /* ColaVec.hpp */,
+				27F02F4327AAF9D40033BC21 /* ColaVec.cpp */,
+				27F02F3B27A6D7060033BC21 /* Nodo.hpp */,
+				27F02F3A27A6D7060033BC21 /* Nodo.cpp */,
 			);
 			path = PILASCONLISTASXCODE;
 			sourceTree = "<group>";
@@ -119,7 +139,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27F02F4227AAF2A20033BC21 /* Colas.cpp in Sources */,
+				27F02F4527AAF9D40033BC21 /* ColaVec.cpp in Sources */,
+				27F02F3F27A6D7920033BC21 /* Pila.cpp in Sources */,
 				27F02F3227A6D5A00033BC21 /* main.cpp in Sources */,
+				27F02F3C27A6D7060033BC21 /* Nodo.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

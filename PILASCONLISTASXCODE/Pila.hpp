@@ -7,8 +7,9 @@
 
 #ifndef Pila_hpp
 #define Pila_hpp
-#include <stdio.h>
 #pragma once
+#include <stdio.h>
+#include "Nodo.hpp"
 class Pila
 {
 private:
@@ -28,7 +29,11 @@ public:
     void insertarInicio(int);
     void invertirPila();
     void mostraPila();
-
+    void ordenarPila(Pila*);
+    int buscarMenor(Pila*, Pila*);
+    void apilarOrdenado(Pila*, int);
+    void sumarPilas(Pila*, Pila*);
+    void paresEimpares();
 };
 
 #endif /* Pila_hpp */
