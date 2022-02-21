@@ -20,6 +20,7 @@ Cola::Cola(int n)
     limite = n;
     tope = 0;
     Punta = nullptr;
+    Ultimo = nullptr;
 }
 
 
@@ -32,18 +33,32 @@ void Cola::encolar(int dato)
 int Cola::desencolar()
 {
     Nodo* p = Punta;
-    Nodo* q = p->getLiga();
-    int r = p->getDato();
-    Punta = Punta->getLiga();
-    while (q->getLiga() != nullptr)
-    {
-        p->setDato(q->getDato());
-        q = q->getLiga();
-        p = p->getLiga();
-    }
-    tope--;
+    //Nodo* q = p->getLiga();
+    int dato = p->getDato();
     
-    return r;
+    if(tope == 1)
+    {
+        dato = p->getDato();
+        Punta = nullptr;
+        Ultimo = nullptr;
+        
+    }
+    else
+    {
+        /*while (q->getLiga() != nullptr)
+        {
+            p->setDato(q->getDato());
+            q = q->getLiga();
+            p = p->getLiga();
+            
+            if(q->getLiga() == nullptr)
+                p->setLiga(nullptr);
+        }*/
+        Punta = Punta->getLiga();
+    }
+    
+    tope--;
+    return dato;
 }
 
 bool Cola::colaVacia()
@@ -81,23 +96,26 @@ void Cola::mostraCola()
 {
     int aux = 0;
     Cola *colaAux = new Cola(limite);
+    cout<< " Cola -> ";
     while (colaVacia() == false)
     {
         aux = desencolar();
-        cout<< " Dato: "<< tope <<" : " << aux << endl;
+        cout<< aux << " - ";
         colaAux->encolar(aux);
     }
-    llenarCola(colaAux);  // se llena pila auxiliar.
-}
+    llenarCola(colaAux);  // se llena Cola auxiliar.
+}   
 
 void Cola::insertarFinal(int dat)
 {
-    Nodo *p = Punta, *newNodo = new Nodo();
+    Nodo *p = Punta;
+    Nodo *newNodo = new Nodo();
     newNodo->setDato(dat);
     
     if (Punta == nullptr)
     {
         Punta = newNodo;
+        Ultimo = newNodo;
     }
     else
     {
@@ -106,6 +124,7 @@ void Cola::insertarFinal(int dat)
             p = p->getLiga();
         }
         p->setLiga(newNodo);
+        Ultimo = p;
     }
 
 }
@@ -155,9 +174,49 @@ int Cola::buscarMenor(Cola* cola1, Cola* cola2)
 
 void Cola::encolarOrdenado(Cola* cola,int dato)
 {
-    ordenarCola(cola);
     encolar(dato);
+    ordenarCola(cola);
 }
 
 
+
+void Cola::sumarColayPila(Pila* pi, Cola* co)
+{
+    Punta = nullptr;
+    bool sw = false;
+    int auxCola, auxPila;
+    Cola *colaAux = new Cola(limite);
+    Pila *pilaAux = new Pila(limite);
+     do{
+         if (sw == false || (!pi->pilaVacia() && !co->colaVacia()))
+         {
+             auxCola = co->desencolar();
+             auxPila = pi->desapilar();
+             
+             encolar(auxPila + auxCola);
+             
+             colaAux->encolar(auxCola);
+             pilaAux->apilar(auxPila);
+       
+            sw = true;
+        }
+        else {
+            if (!pi->pilaVacia()) {
+                auxPila = pi->desapilar();
+                encolar(auxPila);
+                pilaAux->apilar(auxPila);
+
+            }
+            if (!co->colaVacia()) {
+                auxCola = co->desencolar();
+                encolar(auxCola);
+                colaAux->encolar(auxCola);
+
+            }
+        }
+     }while (!pi->pilaVacia() || !co->colaVacia());
+    
+    pi->llenarPila(pilaAux);
+    co->llenarCola(colaAux);
+}
 

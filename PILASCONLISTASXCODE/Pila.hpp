@@ -17,10 +17,12 @@ private:
     int limite;
     int tope;
     Nodo *Punta;
+    Nodo *Ultimo;
     
 public:
 
     Pila(int);
+    Nodo* getPunta();
     void apilar(int); //Set
     int desapilar(); //Get
     bool pilaVacia();

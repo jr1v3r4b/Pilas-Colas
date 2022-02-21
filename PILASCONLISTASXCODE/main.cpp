@@ -23,12 +23,13 @@ void Menu()
     cout << "4. Desencolar. " << endl;
     cout << "5. Mostrar Pila. " << endl;
     cout << "6. Mostrar Cola.  " << endl;
-    cout << "7. Invertir Pila. " << endl;
-    cout << "8. Sumar Pila. " << endl;
+    //cout << "7. Invertir Pila. " << endl;
+    //cout << "8. Sumar Pila. " << endl;
     cout << "9. Ordenar Pila." << endl;
     cout << "10. Apilar Ordenado." << endl;
     cout << "11. Ordenar Cola." << endl;
     cout << "12. Encolar Ordenado." << endl;
+    cout << "13. Sumar Pila & Cola.  "<< endl;
 
     cout << "0. Salir"<< endl;
 
@@ -41,7 +42,7 @@ int main()
 {
 
     Pila* P1;
-    Cola* C1;
+    Cola* C1, * C2;
     int opc=0, dato=0, n = 0;
 
     cout << " ingrese el tamaño de la pila o cola." << endl;
@@ -49,6 +50,7 @@ int main()
     
     P1 = new Pila(n);
     C1 = new Cola(n);
+    C2 = new Cola(n);
 
     do
     {
@@ -103,7 +105,7 @@ int main()
             case 4: //desencolar
                 if(!C1->colaVacia())
                 {
-                    cout << " \n Se desencoló el ultimo dato: " << C1->desencolar() << endl;
+                    cout << " \n Se desencoló el Primer dato en cola: " << C1->desencolar() << endl;
                 }
                 else
                 {
@@ -205,6 +207,21 @@ int main()
                     
                 }
             
+                cin.get();
+                break;
+                
+            case 13:
+                
+                cout << "\n Se acaba de sumar la Pila y la Cola. "<< endl;
+                        C2->sumarColayPila(P1,C1);
+                cout << "**A continuacion  ... *** \n La Pila: "<< endl;
+                        P1->mostraPila();
+                cout << "\n La Cola: "<< endl;
+                        C1->mostraCola();
+                cout << "\n Cola con las sumas: "<< endl;
+                        C2->mostraCola();
+                
+
                 cin.get();
                 break;
                 

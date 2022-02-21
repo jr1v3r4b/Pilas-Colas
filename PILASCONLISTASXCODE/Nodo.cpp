@@ -28,7 +28,7 @@ Nodo *Nodo::getLiga()
     return liga;
 }
 
-void Nodo::setLiga(Nodo *liga) {
+void Nodo::setLiga(Nodo *liga){
 
     Nodo::liga = liga;
 }

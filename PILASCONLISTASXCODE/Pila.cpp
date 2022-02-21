@@ -18,8 +18,12 @@ Pila::Pila(int n)
     limite = n;
     tope = 0;
     Punta = nullptr;
+    Ultimo = nullptr;
 }
-
+Nodo *Pila::getPunta()
+{
+    return Punta;
+}
 void Pila::apilar(int dato)
 {
     tope++;

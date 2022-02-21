@@ -10,6 +10,8 @@
 #pragma once
 #include <stdio.h>
 #include "Nodo.hpp"
+#include "Pila.hpp"
+
 
 class Cola
 {
@@ -17,7 +19,7 @@ private:
     int limite;
     int tope;
     Nodo *Punta;
-    
+    Nodo *Ultimo;
 public:
     
     Cola(int);
@@ -33,6 +35,7 @@ public:
     void ordenarCola(Cola*);
     int buscarMenor(Cola* , Cola*);
     void encolarOrdenado(Cola* ,int);
+    void sumarColayPila(Pila*, Cola*);
 };
 
 
